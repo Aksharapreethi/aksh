@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AKSHARA</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div class="icon">
+          <h2 class="logo">AKSHARA</h2>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="#"></a>HOME</li>
+            <li><a href="#"></a>HOME</li>
+            <li><a href="#"></a>HOME</li>
+            <li><a href="#"></a>HOME</li>
+            <li><a href="#"></a>HOME</li>
+            <li><a href="#"></a>HOME</li>
+          </ul>
+        </div>
+        <div class="search">
+          <input
+            class="srch"
+            type="search"
+            name=""
+            placeholder="enter ur name"
+          />
+          <a href="#"><button class="btn">serach</button></a>
+        </div>
+      </div>
+      <div class="content">
+        <h1>web design &<br /><span> devlopment</span><br />course</h1>
+        <p class="para">
+          this is akshara if u want to learn web devlopment u cant fill this
+          form or <br>make a contus with me from the below source
+        </p>
+        <button class="cn"><a href="a"> JOIN US</a></button>
+        <div class="form">
+            <h2>login here</h2>
+            <form name="submit-to-google-sheet">
+
+              <input type="text" name="NAME" placeholder="enter ur name">
+              <input type="mail" name="email" placeholder="enter ur mail">
+              <input type="text" name="message" placeholder="MESSAGE">
+              <button class="btnn"><a href="#"> submit</a></button>
+            </form>
+            <!-- <span id="msg">Message sent Succesfully</span> -->
+            <p class="link">don't have an acc<br>
+            <a href="#">sign up</a>here</a></p>
+            <p class="liw">llogin with</p>
+            <divv class="icon">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            </divv>
+                </div>
+      </div>
+    </div>
+    <form>
+      <input name="email" type="email" placeholder="Email" required>
+      <button type="submit">Send</button>
+    </form>
+    
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwavb6xIQxYVkX-O9QrWPJhp1H6f2kJlI8JV3z3i4QD5jIDNcUtApzE44PzzYBqB6zs/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById("msg")
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            msg.innerHTML = "Message Sent Successfully"
+            setTimeout(function(){
+              msg.innerHTML = ""
+            },3000)
+            form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+   </body>
+  
+</html>
